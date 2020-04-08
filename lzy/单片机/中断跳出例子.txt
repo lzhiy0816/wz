@@ -1,0 +1,154 @@
+org 0000h
+sjmp main
+org 0003h
+sjmp int0
+org 0013h
+sjmp int1
+
+org 0030h           ;设置中断INT0返回的入口
+pop 40h             ;释放堆栈资源
+pop 41h
+sjmp lzy02          ;转到中断后需要执行的程序地址
+
+org 0038h           ;设置中断INT1返回的入口
+pop 40h             ;释放堆栈资源
+pop 41h
+sjmp lzy03          ;转到中断后需要执行的程序地址
+
+org 0200h           ;主程序
+main:
+mov tcon,#05h       ;设INT0，INT1为负跳变触发方式
+mov ie,#85h         ;开中断，允许外中断0中断，允许外中断1中断
+
+lzy03:
+mov p0,#0ffh        ;置初值
+mov p1,#0ffh
+mov p2,#0ffh
+mov p3,#0ffh
+
+lzy01:              ;P0.0 ~ P0.7顺序2秒循环点亮
+clr p0.0
+acall delay2s
+setb p0.0
+clr p0.1
+acall delay2s
+setb p0.1
+clr p0.2
+acall delay2s
+setb p0.2
+clr p0.3
+acall delay2s
+setb p0.3
+clr p0.4
+acall delay2s
+setb p0.4
+clr p0.5
+acall delay2s
+setb p0.5
+clr p0.6
+acall delay2s
+setb p0.6
+clr p0.7
+acall delay2s
+setb p0.7
+nop
+nop
+sjmp lzy01
+
+lzy02:              ;P1.0 ~ P1.7顺序2秒循环点亮，此为INT0中断后想要转到的程序
+clr p1.0
+acall delay2s
+setb p1.0
+clr p1.1
+acall delay2s
+setb p1.1
+clr p1.2
+acall delay2s
+setb p1.2
+clr p1.3
+acall delay2s
+setb p1.3
+clr p1.4
+acall delay2s
+setb p1.4
+clr p1.5
+acall delay2s
+setb p1.5
+clr p1.6
+acall delay2s
+setb p1.6
+clr p1.7
+acall delay2s
+setb p0.7
+nop
+nop
+sjmp lzy02
+
+int0:               ;INT0中断程序
+clr p2.0            ;点亮P2.0灯，以确定INT0中断已被执行
+pop 40h             ;释放中断返回地址
+pop 41h
+mov 40h,#00h        ;将0030H送到中断返回地址的单元
+mov 41h,#30h
+push 40h            ;将中断地址重新压栈
+push 41h
+nop
+nop
+reti
+
+int1:               ;INT1中断程序
+setb p2.0           ;灭P2.0灯，并点亮2.4灯，以确定INT1中断已被执行
+clr p2.4
+acall delay2s       ;让2.4灯有8秒的点亮时间
+acall delay2s
+acall delay2s
+acall delay2s
+pop 40h             ;释放中断返回地址
+pop 41h
+mov 40h,#00h        ;将0038H送到中断返回地址的单元
+mov 41h,#38h
+push 40h            ;将中断地址重新压栈
+push 41h
+nop
+nop
+reti
+
+delay2s:            ;2秒延时子程序
+mov r0,#250
+mov r1,#200
+mov r2,#20
+djnz r2,$
+djnz r1,$-3
+djnz r0,$-6
+nop
+nop
+ret
+
+nop
+nop
+end
+
+
+;====================================================================
+;可以的，在返回中断之前修改PC的指针，
+;--------------------------------------------------------------------
+;   .
+;   .
+;POP 40H
+;POP 41H
+;MOV 40H,#10H      高8位
+;MOV 41H,#00H      低8位
+;PUSH 40H
+;PUSH 41H
+;RETI
+;
+;1000H:
+;POP 40H
+;POP 41H
+;LJMP ????H
+;   .
+;   .
+;
+;--------------------------------------------------------------------
+;执行中断返回后就跳到1000H开始的程序中，这样不浪费堆栈资源。
+;====================================================================

@@ -1,0 +1,179 @@
+;***************************************************************************
+;程序转载请著明出处
+;E-mail:lzhiy0816@163.com (www.zy816.com)
+;Create by :梁志英
+;***************************************************************************
+          org 0000h
+          sjmp start
+          org 0030h
+start:    mov a,#00h          ;清屏
+          mov p0,a
+          mov p2,a
+          mov r3,#08h         ;每个画面2个字，移动8次后显示最后2个字
+          mov dptr,#table
+loop3:    clr f0              ;f0=1，作为显示最后1个字与头1个字的标志
+          acall sp01          ;转2个字画面连续显示255次子程序
+          clr c
+          mov a,dpl          ;(dptr)+32，地址指针移到下一个字
+          add a,#20h
+          mov dpl,a
+          mov a,dph
+          add a,#00h
+          mov dph,a
+          djnz r3,loop3
+          setb f0
+          acall sp01
+          sjmp start
+          nop
+
+;***************************************
+;(sp01)子程序  2个字画面连续显示255次
+;***************************************
+sp01:     mov r0,#0ffh
+loop2:    acall sp02          ;转显示2个字画面子程序
+          djnz r0,loop2
+          ret
+          nop
+
+;***************************************
+;(sp02)子程序  显示2个字画面
+;***************************************
+sp02:     jb f0,loop4
+          clr p1.4            ;显示左边
+          acall sp_012        ;转显示字子程序
+          setb p1.4           ;显示右边
+          acall sp_012
+          clr c
+          mov a,dpl           ;(dptr)-64，地址指针返回2个字
+          subb a,#40h
+          mov dpl,a
+          mov a,dph
+          subb a,#00h
+          mov dph,a
+          sjmp loop5
+loop4:    mov dptr,#table
+          clr c
+          mov a,dph           ;(sptr)+256，地址指针移到最后一个字
+          add a,#01h
+          mov dph,a
+          clr p1.4
+          acall sp_012        ;左边显示最后一个字
+          mov dptr,#table
+          setb p1.4
+          acall sp_012        ;右边显示头一个字
+loop5:    ret
+          nop
+
+;***************************************
+;(sp_012)子程序  显示一个完整字
+;***************************************
+sp_012:   mov r1,#00h
+loop1:    mov a,#00h
+          orl p1,r1
+          movc a,@a+dptr
+          mov p0,a            ;显示字每行的左半部
+          inc dptr
+          mov a,#00h
+          movc a,@a+dptr
+          mov p2,a            ;显示字每行的右半部
+          inc dptr
+          inc r1
+          acall delay50us     ;延时50微秒
+          anl p1,#10h
+          cjne r1,#10h,loop1  ;16行显示一个完整字
+          ret
+          nop
+
+;***************************************
+;(delay50us)子程序  延时50微秒
+;***************************************
+delay50us:mov r2,#25
+          djnz r2,$
+          ret
+          nop
+
+table:
+;空字符
+DB 00H,00H,00H,00H
+DB 00H,00H,00H,00H
+DB 00H,00H,00H,00H
+DB 00H,00H,00H,00H
+DB 00H,00H,00H,00H
+DB 00H,00H,00H,00H
+DB 00H,00H,00H,00H
+DB 00H,00H,00H,00H
+
+;振
+DB 08H,40H,08H,42H
+DB 08H,81H,0FFH,0FEH
+DB 09H,02H,0AH,0CH
+DB 7FH,0F0H,49H,00H
+DB 49H,0FFH,49H,02H
+DB 49H,0E0H,49H,18H
+DB 59H,14H,0CBH,26H
+DB 41H,44H,00H,00H
+;兴
+DB 00H,80H,00H,81H
+DB 20H,82H,18H,84H
+DB 0CH,88H,00H,98H
+DB 0C0H,80H,3CH,80H
+DB 00H,80H,01H,90H
+DB 06H,88H,18H,84H
+DB 60H,86H,01H,83H
+DB 00H,80H,00H,00H
+;中
+DB 00H,00H,1FH,0C0H
+DB 10H,80H,10H,80H
+DB 10H,80H,10H,80H
+DB 10H,80H,0FFH,0FFH
+DB 10H,80H,10H,80H
+DB 10H,80H,10H,80H
+DB 10H,80H,3FH,0C0H
+DB 10H,00H,00H,00H
+;华
+DB 00H,20H,02H,20H
+DB 04H,20H,08H,20H
+DB 3FH,0A0H,0C0H,20H
+DB 02H,20H,04H,0FFH
+DB 08H,20H,0FFH,20H
+DB 10H,0A0H,20H,0A0H
+DB 60H,0A0H,03H,0A0H
+DB 00H,20H,00H,00H
+;电
+DB 00H,00H,1FH,0E0H
+DB 12H,40H,12H,40H
+DB 12H,40H,12H,40H
+DB 0FFH,0FCH,12H,42H
+DB 12H,42H,12H,42H
+DB 12H,42H,3FH,0E2H
+DB 10H,02H,00H,0EH
+DB 00H,00H,00H,00H
+;子
+DB 01H,00H,01H,00H
+DB 41H,00H,41H,00H
+DB 41H,00H,41H,02H
+DB 41H,01H,47H,0FEH
+DB 45H,00H,49H,00H
+DB 51H,00H,61H,00H
+DB 01H,00H,03H,00H
+DB 01H,00H,00H,00H
+;事
+DB 20H,20H,20H,20H
+DB 2EH,0A8H,2AH,0A8H
+DB 2AH,0A8H,2AH,0AAH
+DB 2AH,0A9H,0FFH,0FEH
+DB 2AH,0A8H,2AH,0A8H
+DB 2AH,0A8H,2AH,0A8H
+DB 2EH,0FCH,60H,20H
+DB 20H,20H,00H,00H
+;业
+DB 00H,02H,08H,02H
+DB 06H,02H,01H,0E2H
+DB 00H,02H,0FFH,0FEH
+DB 00H,02H,00H,02H
+DB 00H,02H,0FFH,0FEH
+DB 00H,22H,00H,0C2H
+DB 03H,02H,0CH,06H
+DB 00H,02H,00H,00H
+
+          end

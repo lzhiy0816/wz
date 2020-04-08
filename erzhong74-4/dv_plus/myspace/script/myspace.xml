@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="gb2312" ?> 
+<dv_space>
+<space_info id="0" userid="0" username="未开通" title="标题" intro="简介/说明" s_left="userinfo" s_right="" s_center="usertopic" s_css="" s_style="1" s_path="default01/" updatetime="2007-4-10 17:29:20" lock="0"  cachedb="" plusdb="" set="10,5,15,20,0,30,20,20,10,5,30,0,0,0,0,0,0,0,0,0,0">
+<modules />
+<leftchannal>
+</leftchannal>
+<mainchannal>
+</mainchannal>
+<rightchannal /> 
+</space_info>
+<forum_user>
+<userinfo statuserid="1922465532" userid="0" username="客人" userclass="客人" usergroupid="7" cometime="2007-6-1 21:35:35" boardid="0" activetime="2007-6-1 21:46:47" statusstr="" /> 
+</forum_user>
+<space_user userdelpercent="0%" /> 
+<BoardList>
+</BoardList>
+</dv_space>
+
+
+

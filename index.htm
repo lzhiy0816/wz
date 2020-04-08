@@ -1,0 +1,553 @@
+<html>
+<head>
+<title>共享的世界</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<script language="JavaScript">
+<!--
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+// -->
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+
+function MM_showHideLayers() { //v3.0
+  var i,p,v,obj,args=MM_showHideLayers.arguments;
+  for (i=0; i<(args.length-2); i+=3) if ((obj=MM_findObj(args[i]))!=null) { v=args[i+2];
+    if (obj.style) { obj=obj.style; v=(v=='show')?'visible':(v='hide')?'hidden':v; }
+    obj.visibility=v; }
+}
+//-->
+</script>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" background="img/background/lzybg01.jpg" onLoad="MM_preloadImages('img/lzy/L~.gif','img/lzy/z~.gif','img/lzy/h~.gif','img/lzy/i~.gif','img/lzy/y~.gif','img/lzy/0~.gif','img/lzy/8~.gif','img/lzy/1~.gif','img/lzy/6~.gif','img/button/FTPOver.gif','img/button/MpOver.gif','img/button/EmailOver.gif','img/button/lyhMPOver.gif')">
+<script language="JavaScript">
+<!-- Begin
+colors = new Array('009900','ff0000','0000ff');  //Clock face colors.
+sCol = '0000ff';  //秒针颜色
+mCol = 'ff0000';  //分针颜色
+hCol = '009900';  //时针颜色
+//Alter nothing below!
+H = 'HHHHH';
+H = H.split('');
+H = H.reverse();
+M = 'MMMMM';
+M = M.split('');
+M = M.reverse();
+S = 'SSSSS';
+S = S.split('');
+S = S.reverse();
+dots = 12;
+var Ypos = 0,Xpos = 0,Ybase = 0,Xbase = 0;
+var ay = 0, ax = 0, Ay = 0, Ax = 0, by = 0, bx = 0, By = 0, Bx = 0, cy = 0, cx = 0, Cy = 0, Cx = 0, dy = 0, dx = 0, Dy = 0, Dx = 0;
+count = 0;
+count_a = 0;
+move = 1;
+ns = (document.layers)?1:0;
+viz = (document.layers)?'hide':'hidden';
+if (ns) {
+for (i = 0; i < dots; i++)
+document.write('<layer name=nface'+i+' top=0 left=0 bgcolor=#ffffff clip="0,0,3,3"></layer>');
+for (i = 0; i < S.length; i++)
+document.write('<layer name=nx'+i+' top=0 left=0 width=36 height=36><font face=Verdana size=2 color='+sCol+'><center>'+S[i]+'</center></font></layer>');
+for (i = 0; i < M.length; i++)
+document.write('<layer name=ny'+i+' top=0 left=0 width=36 height=36><font face=Verdana size=2 color='+mCol+'><center>'+M[i]+'</center></font></layer>');
+for (i = 0; i < H.length; i++)
+document.write('<layer name=nz'+i+' top=0 left=0 width=36 height=36><font face=Verdana size=2 color='+hCol+'><center>'+H[i]+'</center></font></layer>');
+}
+else{
+document.write('<div id="W" style="position:absolute;top:0px;left:0px"><div style="position:relative">');
+for (i = 0; i < dots; i++) {
+document.write('<div id="face" style="position:absolute;top:0px;left:0px;width:3px;height:3px;font-size:3px;background:#ffffff"></div>');
+}
+document.write('</div></div>');
+document.write('<div id="X" style="position:absolute;top:0px;left:0px"><div style="position:relative">');
+for (i = 0; i < S.length; i++) {
+document.write('<div id="x" style="position:absolute;width:36px;height:36px;font-family:Verdana;font-size:12px;color:'+sCol+';text-align:center;padding-top:10px">'+S[i]+'</div>');
+}
+document.write('</div></div>')
+document.write('<div id="Y" style="position:absolute;top:0px;left:0px"><div style="position:relative">');
+for (i = 0; i < M.length; i++) {
+document.write('<div id="y" style="position:absolute;width:36px;height:36px;font-family:Verdana;font-size:12px;color:'+mCol+';text-align:center;padding-top:10px">'+M[i]+'</div>');
+}
+document.write('</div></div>')
+document.write('<div id="Z" style="position:absolute;top:0px;left:0px"><div style="position:relative">');
+for (i = 0; i < H.length; i++) {
+document.write('<div id="z" style="position:absolute;width:36px;height:36px;font-family:Verdana;font-size:12px;color:'+hCol+';text-align:center;padding-top:10px">'+H[i]+'</div>');
+}
+document.write('</div></div>');
+}
+if (ns) {
+window.captureEvents(Event.MOUSEMOVE);
+function nsMouse(evnt) {
+Ypos = evnt.pageY + 100;
+Xpos = evnt.pageX + 100;
+}
+window.onMouseMove = nsMouse;
+}
+else{
+function ieMouse() {
+Ypos = event.y + 100;
+Xpos = event.x + 100;
+}
+document.onmousemove = ieMouse;
+}
+function clock() {
+time = new Date ();
+secs = time.getSeconds();
+sec = -1.57 + Math.PI * secs / 30;
+mins = time.getMinutes();
+min = -1.57 + Math.PI * mins / 30;
+hr = time.getHours();
+hrs = -1.575 + Math.PI * hr / 6 + Math.PI * parseInt(time.getMinutes()) / 360;
+Ybase = 15;
+Xbase = 15;
+if (ns) {
+document.layers["nx"+0].visibility = viz;
+document.layers["ny"+0].visibility = viz;
+document.layers["nz"+0].visibility = viz;
+for (i = 0; i < S.length; i++) {
+document.layers["nx"+i].top = ay - 12 + (i * Ybase) * Math.sin(sec);
+document.layers["nx"+i].left = ax - 12 + (i * Xbase) * Math.cos(sec);
+}
+for (i = 0; i < M.length; i++) {
+document.layers["ny"+i].top = by - 12 + (i * Ybase) * Math.sin(min);
+document.layers["ny"+i].left = bx - 12 + (i * Xbase) * Math.cos(min);
+}
+for (i = 0; i < H.length; i++) {
+document.layers["nz"+i].top = cy - 12 + (i * Ybase) * Math.sin(hrs);
+document.layers["nz"+i].left = cx - 12 + (i * Xbase) * Math.cos(hrs);
+}
+for (i = 0; i < dots; ++i) {
+document.layers["nface"+i].top = dy - 2 + (70 * Math.sin(-0.49+dots+i/1.9));
+document.layers["nface"+i].left = dx + 4 + (70 * Math.cos(-0.49+dots+i/1.9));
+   }
+}
+else {
+var scrll = document.body.scrollTop;
+W.style.pixelTop = scrll;
+X.style.pixelTop = scrll;
+Y.style.pixelTop = scrll;
+Z.style.pixelTop = scrll;
+x[0].style.visibility=viz;
+y[0].style.visibility = viz;
+z[0].style.visibility = viz;
+for (i = 0; i < S.length; i++) {
+x[i].style.pixelTop = ay - 12 + (i * Ybase) * Math.sin(sec);
+x[i].style.pixelLeft = ax - 12 + (i * Xbase) * Math.cos(sec);
+}
+for (i = 0; i < M.length; i++) {
+y[i].style.pixelTop = by - 12 + (i * Ybase) * Math.sin(min);
+y[i].style.pixelLeft = bx - 12 + (i * Xbase) * Math.cos(min);
+}
+for (i = 0; i < H.length; i++) {
+z[i].style.pixelTop = cy - 12 + (i * Ybase) * Math.sin(hrs);
+z[i].style.pixelLeft = cx - 12 + (i * Xbase) * Math.cos(hrs);
+}
+for (i = 0; i < dots; ++i) {
+face[i].style.pixelTop = dy + 6 + (70 * Math.sin(-0.49 + dots + i / 1.9));
+face[i].style.pixelLeft = dx + 4 + (70 * Math.cos(-0.49 + dots + i / 1.9));
+      }
+   }
+}
+function MouseFollow() {
+ay = Math.round(Ay += ((Ypos) - Ay) * 4 / 15);
+ax = Math.round(Ax += ((Xpos) - Ax) * 4 / 15);
+by = Math.round(By += (ay - By) * 4 / 15);
+bx = Math.round(Bx += (ax - Bx) * 4 / 15);
+cy = Math.round(Cy += (by - Cy) * 4 / 15);
+cx = Math.round(Cx += (bx - Cx) * 4 / 15);
+dy = Math.round(Dy += (cy - Dy) * 4 / 15);
+dx = Math.round(Dx += (cx - Dx) * 4 / 15);
+clock();
+setTimeout('MouseFollow()',10);
+}
+function colorstep() {
+count +=move;
+if (count >= dots) {count=0;count_a += move}
+if (count_a == colors.length) count_a = 0;
+if (ns) document.layers["nface"+count].bgColor = colors[count_a];
+else face[count].style.background = colors[count_a];
+setTimeout('colorstep()',100)
+}
+function StartAll() {
+MouseFollow();
+colorstep();
+}
+if (document.layers || document.all) window.onload = StartAll;
+//  End -->
+</script>
+<div align="center">
+  <table width="50%" border="0" cellspacing="0" cellpadding="0" height="4%">
+    <tr>
+      <td>&nbsp;</td>
+    </tr>
+  </table>
+  <table width="370" border="0" cellspacing="0" cellpadding="0" height="200">
+    <tr>
+      <td>
+	    <div id="lyb" style="position:absolute; width:370px; height:200px; z-index:1; top: 13%; visibility: hidden"> 
+          <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr> 
+              <td><img src="img/frame/shadowL.gif" width="10" height="200"></td>
+              <td> 
+                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                  <tr> 
+                    <td valign="top"><img src="img/frame/shadowT.gif" width="359" height="10"></td>
+                  </tr>
+                  <tr> 
+                    <td width="359" height="189">
+                      <div align="center">
+                        <table width="100%" cellpadding="10" height="100%">
+                          <tr>
+                            <td> 
+                              <div align="center"><img src="img/inimage/lyb.gif" width="130" height="76"></div>
+                            </td>
+                            <td width="65%"> 
+                              <div align="left">
+                                <p><font color="#990000" face="隶书">首先欢迎您登录<font color="#FF0000">------</font></font><font color="#FF0000"><b>共享的世界</b></font><font color="#990000" face="隶书">。</font></p>
+                                <p><font color="#990000" face="隶书"><font color="#FF0000"><font color="#990000">并欢迎您在此留言板留言，多提宝贵的意见。</font></font></font></p>
+                                <p><font face="隶书" color="#990000">谢谢了！</font></p>
+                                <p><font color="#990000"><b></b></font></p>
+                              </div>
+                            </td>
+                          </tr>
+                        </table>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr> 
+                    <td valign="bottom"><img src="img/frame/shadowB.gif" width="359" height="1"></td>
+                  </tr>
+                </table>
+              </td>
+              <td><img src="img/frame/shadowR.gif" width="1" height="200"></td>
+            </tr>
+          </table>
+        </div>
+		
+        <div id="bbs" style="position:absolute; width:370px; height:200px; z-index:1; top: 13%; visibility: hidden"> 
+          <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr> 
+              <td><img src="img/frame/shadowL.gif" width="10" height="200"></td>
+              <td> 
+                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                  <tr> 
+                    <td valign="top"><img src="img/frame/shadowT.gif" width="359" height="10"></td>
+                  </tr>
+                  <tr> 
+                    <td width="359" height="189">
+                      <div align="center">
+                        <table width="100%" cellpadding="10" height="100%">
+                          <tr>
+                            <td> 
+                              <div align="center"><img src="img/inimage/bbs.gif" width="130" height="103"></div>
+                            </td>
+                            <td width="65%"> 
+                              <div align="left">
+                                <p>&nbsp;</p>
+                                <p><font color="#990000" size="4" face="隶书"><font color="#ff0000">论坛……</font><br><br> 　想说就说，想问就问，呵呵！</font></p>
+                                <p><font color="#990000"><b></b></font></p>
+                              </div>
+                            </td>
+                          </tr>
+                        </table>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr> 
+                    <td valign="bottom"><img src="img/frame/shadowB.gif" width="359" height="1"></td>
+                  </tr>
+                </table>
+              </td>
+              <td><img src="img/frame/shadowR.gif" width="1" height="200"></td>
+            </tr>
+          </table>
+        </div>
+		<div id="Email" style="position:absolute; width:370px; height:200px; z-index:1; top: 13%; visibility: hidden"> 
+          <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr> 
+              <td><img src="img/frame/shadowL.gif" width="10" height="200"></td>
+              <td> 
+                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                  <tr> 
+                    <td valign="top"><img src="img/frame/shadowT.gif" width="359" height="10"></td>
+                  </tr>
+                  <tr> 
+                    <td width="359" height="189">
+                      <div align="center">
+                        <table width="100%" cellpadding="10" height="100%">
+                          <tr>
+                            <td> 
+                              <div align="center"><img src="img/inimage/OEico.gif" width="60" height="60"></div>
+                            </td>
+                            <td width="65%"> 
+                              <div align="left">
+                                <p><font color="#990000" face="隶书">Outlook Express，上网的人没有不会的。</font></p>
+                                <p><font color="#990000" face="隶书">交流交流总就要有的，共同进步嘛！</font></p>
+                                <p><font color="#990000" face="隶书">希望这里能成为您<br>
+                                  </font><font color="#990000"><b><font color="#FF0000">———共享的世界</font></b></font></p>
+                              </div>
+                            </td>
+                          </tr>
+                        </table>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr> 
+                    <td valign="bottom"><img src="img/frame/shadowB.gif" width="359" height="1"></td>
+                  </tr>
+                </table>
+              </td>
+              <td><img src="img/frame/shadowR.gif" width="1" height="200"></td>
+            </tr>
+          </table>
+        </div>
+        
+        <div id="logo" style="position:absolute; width:370px; height:200px; z-index:1; top: 13%; visibility: hidden"> 
+          <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr> 
+              <td><img src="img/frame/shadowL.gif" width="10" height="200"></td>
+              <td> 
+                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                  <tr> 
+                    <td valign="top"><img src="img/frame/shadowT.gif" width="359" height="10"></td>
+                  </tr>
+                  <tr> 
+                    <td width="359" height="189">
+                      <div align="center"> 
+                        <table width="100%" cellpadding="10" height="100%">
+                          <tr>
+                            <td>
+                              <div align="center"><img src="img/inimage/logo.gif" width="80" height="80"></div>
+                            </td>
+                            <td width="50%"> 
+                              <p><font color="#990000" size="4" face="隶书, 华文新魏, 方正舒体">建好网站！</font></p>
+                              <p><font color="#990000" size="4" face="隶书, 华文新魏, 方正舒体">当然就想与其他的网站建立链接啦……</font></p>
+                              <p><font color="#ff0000" size="4" face="隶书, 华文新魏, 方正舒体">欢迎<font color="#009900">加入链接</font><br>！！！</font></p>
+                            </td>
+                          </tr>
+                        </table>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr> 
+                    <td valign="bottom"><img src="img/frame/shadowB.gif" width="359" height="1"></td>
+                  </tr>
+                </table>
+              </td>
+              <td><img src="img/frame/shadowR.gif" width="1" height="200"></td>
+            </tr>
+          </table>
+        </div>
+        <div id="FTP" style="position:absolute; width:370px; height:200px; z-index:1; top: 13%; visibility: hidden"> 
+          <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr> 
+              <td><img src="img/frame/shadowL.gif" width="10" height="200"></td>
+              <td> 
+                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                  <tr> 
+                    <td valign="top"><img src="img/frame/shadowT.gif" width="359" height="10"></td>
+                  </tr>
+                  <tr> 
+                    <td width="359" height="189"> 
+                      <div align="center"> 
+                        <table width="100%" cellpadding="10" height="100%">
+                          <tr> 
+                            <td> 
+                              <div align="center"><img src="img/inimage/FlashFXP.gif" width="75" height="60"></div>
+                            </td>
+                            <td rowspan="2" width="65%"> 
+                              <div align="left"> 
+                                <p><font color="#990000" face="宋体" size="2">　左边的图标，是FTP客户端和服务端软件的两个图标。<br>
+                                  　如果您想弄懂FTP的话，就请进来看看吧。</font></p>
+                                <p><font face="宋体" size="2" color="#990000">　另外，还有一些电气技术方面的文章，可是本人原创哦。<i><font color="#FF0000">见笑啦！！！</font></i></font></p>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr> 
+                            <td> 
+                              <div align="center"><img src="img/inimage/ServU.gif" width="95" height="60"></div>
+                            </td>
+                          </tr>
+                        </table>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr> 
+                    <td valign="bottom"><img src="img/frame/shadowB.gif" width="359" height="1"></td>
+                  </tr>
+                </table>
+              </td>
+              <td><img src="img/frame/shadowR.gif" width="1" height="200"></td>
+            </tr>
+          </table>
+        </div>
+        <div id="Lzhiy0816" style="position:absolute; width:370px; height:200px; z-index:1; top: 13%; visibility: visible"> 
+          <table width="370" border="0" cellspacing="0" cellpadding="0" height="50">
+            <tr>
+              <td>&nbsp;</td>
+            </tr>
+          </table>
+          <table width="370" border="0" cellspacing="0" cellpadding="0" height="100">
+            <tr> 
+              <td width="50"><a href="javascript:;" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('L','','img/lzy/L~.gif','z','','img/lzy/z~.gif','h','','img/lzy/h~.gif','i','','img/lzy/i~.gif','y','','img/lzy/y~.gif','y0','','img/lzy/0~.gif','y8','','img/lzy/8~.gif','y1','','img/lzy/1~.gif','y6','','img/lzy/6~.gif',1)"><img src="img/lzy/L.gif" width="50" height="100" name="L" border="0"></a></td>
+              <td width="45"><a href="javascript:;" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('L','','img/lzy/L~.gif','z','','img/lzy/z~.gif','h','','img/lzy/h~.gif','i','','img/lzy/i~.gif','y','','img/lzy/y~.gif','y0','','img/lzy/0~.gif','y8','','img/lzy/8~.gif','y1','','img/lzy/1~.gif','y6','','img/lzy/6~.gif',1)"><img src="img/lzy/z.gif" width="45" height="100" name="z" border="0"></a></td>
+              <td width="45"><a href="javascript:;" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('L','','img/lzy/L~.gif','z','','img/lzy/z~.gif','h','','img/lzy/h~.gif','i','','img/lzy/i~.gif','y','','img/lzy/y~.gif','y0','','img/lzy/0~.gif','y8','','img/lzy/8~.gif','y1','','img/lzy/1~.gif','y6','','img/lzy/6~.gif',1)"><img src="img/lzy/h.gif" width="45" height="100" name="h" border="0"></a></td>
+              <td width="25"><a href="javascript:;" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('L','','img/lzy/L~.gif','z','','img/lzy/z~.gif','h','','img/lzy/h~.gif','i','','img/lzy/i~.gif','y','','img/lzy/y~.gif','y0','','img/lzy/0~.gif','y8','','img/lzy/8~.gif','y1','','img/lzy/1~.gif','y6','','img/lzy/6~.gif',1)"><img src="img/lzy/i.gif" width="25" height="100" name="i" border="0"></a></td>
+              <td width="45"><a href="javascript:;" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('L','','img/lzy/L~.gif','z','','img/lzy/z~.gif','h','','img/lzy/h~.gif','i','','img/lzy/i~.gif','y','','img/lzy/y~.gif','y0','','img/lzy/0~.gif','y8','','img/lzy/8~.gif','y1','','img/lzy/1~.gif','y6','','img/lzy/6~.gif',1)"><img src="img/lzy/y.gif" width="45" height="100" name="y" border="0"></a></td>
+              <td width="45"><a href="javascript:;" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('L','','img/lzy/L~.gif','z','','img/lzy/z~.gif','h','','img/lzy/h~.gif','i','','img/lzy/i~.gif','y','','img/lzy/y~.gif','y0','','img/lzy/0~.gif','y8','','img/lzy/8~.gif','y1','','img/lzy/1~.gif','y6','','img/lzy/6~.gif',1)"><img src="img/lzy/0.gif" width="45" height="100" name="y0" border="0"></a></td>
+              <td width="45"><a href="javascript:;" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('L','','img/lzy/L~.gif','z','','img/lzy/z~.gif','h','','img/lzy/h~.gif','i','','img/lzy/i~.gif','y','','img/lzy/y~.gif','y0','','img/lzy/0~.gif','y8','','img/lzy/8~.gif','y1','','img/lzy/1~.gif','y6','','img/lzy/6~.gif',1)"><img src="img/lzy/8.gif" width="45" height="100" name="y8" border="0"></a></td>
+              <td width="25"><a href="javascript:;" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('L','','img/lzy/L~.gif','z','','img/lzy/z~.gif','h','','img/lzy/h~.gif','i','','img/lzy/i~.gif','y','','img/lzy/y~.gif','y0','','img/lzy/0~.gif','y8','','img/lzy/8~.gif','y1','','img/lzy/1~.gif','y6','','img/lzy/6~.gif',1)"><img src="img/lzy/1.gif" width="25" height="100" name="y1" border="0"></a></td>
+              <td width="45"><a href="javascript:;" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('L','','img/lzy/L~.gif','z','','img/lzy/z~.gif','h','','img/lzy/h~.gif','i','','img/lzy/i~.gif','y','','img/lzy/y~.gif','y0','','img/lzy/0~.gif','y8','','img/lzy/8~.gif','y1','','img/lzy/1~.gif','y6','','img/lzy/6~.gif',1)"><img src="img/lzy/6.gif" width="45" height="100" name="y6" border="0"></a></td>
+            </tr>
+          </table>
+          <p>&nbsp;</p>
+        </div>
+      </td>
+    </tr>
+  </table>
+  <table width="50%" border="0" cellspacing="0" cellpadding="0" height="20%">
+    <tr>
+      <td>&nbsp;</td>
+    </tr>
+  </table>
+  <table width="80%" border="0" cellspacing="0" cellpadding="0">
+    <tr> 
+      <td width="20%"> 
+        <div align="center"><a href="netpage/ftp01.htm" onMouseOut="MM_swapImgRestore();MM_showHideLayers('FTP','','hide','Lzhiy0816','','show')" onMouseOver="MM_swapImage('Image1','','img/button/FileOver.gif',1);MM_showHideLayers('FTP','','show','Lzhiy0816','','hide')"><img src="img/button/FileOut.gif" width="90" height="30" name="Image1" border="0"></a></div>
+      </td>
+      <td width="20%"> 
+        <div align="center"><a href="logo.asp" onMouseOut="MM_swapImgRestore();MM_showHideLayers('logo','','hide','Lzhiy0816','','show')" onMouseOver="MM_swapImage('Image2','','img/button/logoover.gif',1);MM_showHideLayers('logo','','show','Lzhiy0816','','hide')"><img src="img/button/logoout.gif" width="90" height="30" name="Image2" border="0"></a></div>
+      </td>
+      <td width="20%"> 
+        <div align="center"><a href="mailto:lzhiy0816@163.com" onMouseOut="MM_swapImgRestore();MM_showHideLayers('Email','','hide','Lzhiy0816','','show')" onMouseOver="MM_swapImage('Image3','','img/button/EmailOver.gif',1);MM_showHideLayers('Email','','show','Lzhiy0816','','hide')"><img src="img/button/EmailOut.gif" width="90" height="30" name="Image3" border="0"></a></div>
+      </td>
+      <td width="20%"> 
+        <div align="center"><a href="bbs/" onMouseOut="MM_swapImgRestore();MM_showHideLayers('bbs','','hide','Lzhiy0816','','show')" onMouseOver="MM_swapImage('Image4','','img/button/bbsover.gif',1);MM_showHideLayers('bbs','','show','Lzhiy0816','','hide')" target="_blank"><img src="img/button/bbsout.gif" width="90" height="30" name="Image4" border="0"></a></div>
+      </td>
+      <td width="20%">
+        <div align="center"><a href="leaveword.asp" onMouseOut="MM_swapImgRestore();MM_showHideLayers('lyb','','hide','Lzhiy0816','','show')" onMouseOver="MM_swapImage('Image5','','img/button/LybOver.gif',1);MM_showHideLayers('lyb','','show','Lzhiy0816','','hide')"><img src="img/button/LybOut.gif" width="90" height="30" name="Image5" border="0"></a></div>
+      </td>
+    </tr>
+  </table>
+  <table width="60%" border="0" cellspacing="0" cellpadding="0" height="5%">
+    <tr>
+      <td>&nbsp;</td>
+    </tr>
+  </table>
+  <table width="60%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td width="5%">&nbsp;</td>
+      <td width="18%"><font size="2"><b>共享的世界</b></font></td>
+      <td width="72%"><font color="#FF0000"><marquee><i><b><font color="#0000FF">Lzhiy0816</font></b> 
+        感谢您的光临！</i></marquee></font></td>
+      <td>&nbsp;</td>
+    </tr>
+  </table>
+  <table width="60%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td height="4"><img src="img/line/0173.gif" width="100%" height="4"></td>
+    </tr>
+  </table>
+  <table width="60%" border="0" cellspacing="0" cellpadding="0" height="8%">
+    <tr> 
+      <td height="35"> 
+        <div align="center"><font color="#009900"> 
+          <script language="JavaScript" >
+<!--
+tmpDate = new Date();
+date = tmpDate.getDate();
+month= tmpDate.getMonth() + 1 ;
+year= tmpDate.getYear();
+document.write(year);
+document.write("年");
+document.write(month);
+document.write("月");
+document.write(date);
+document.write("日 ");
+
+myArray=new Array(6);
+myArray[0]="星期日"
+myArray[1]="星期一"
+myArray[2]="星期二"
+myArray[3]="星期三"
+myArray[4]="星期四"
+myArray[5]="星期五"
+myArray[6]="星期六"
+weekday=tmpDate.getDay();
+if (weekday==0 | weekday==6)
+{
+document.write(myArray[weekday])
+}
+else
+{document.write(myArray[weekday])
+};
+// -->
+</script>
+          </font></div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div align="center"><font size="2">感谢<a href="http://www.jahee.com" target="_blank">《嘉禾网络--您的网上家园》</a>提供网页空间</font></div>
+      </td>
+    </tr>
+  </table>
+  <p>
+
+<!--甘露之窗代码开始-->
+<!--
+    <script src="http://www.glzc.net/genluftp/genlutj/count.asp?view=lzhiy0816"></script>
+    <script>var tc_user="lzhiy";var tc_class="2";</script>
+    <script src="http://stat.t2t2.com/stat.js"></script>
+-->
+<!--甘露之窗代码结束-->
+
+<!--太极链钛金版统计代码开始-->
+<!--
+<script language="javascript">
+var tcserver_name='stat1.vipstat.com';
+var tc3_uid='50844';
+var _referrer = escape(document.referrer);
+</script>
+<script language=javascript src="http://stat1.vipstat.com/stat/stat.js">
+</SCRIPT>
+-->
+<!--太极链钛金版统计代码结束-->
+    <br>
+<!--
+    <script>var user="lzhiy";var style="counter";var url="http://stat.yexr.com";</script>
+    <script src="http://stat.yexr.com/stat.js"></script>
+-->
+  </p>
+  <p>&nbsp;</p>
+</div>
+</body>
+</html>

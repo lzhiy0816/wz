@@ -1,0 +1,347 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<HTML><HEAD><TITLE>个性首页[动网先锋论坛]-演示</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=gb2312">
+<META content=aspsky,dvbbs,动网,动网论坛,asp,论坛,插件 name=keywords>
+<!--动网论坛是使用量最多、覆盖面最广的免费中文论坛，也是国内知名的技术讨论站点，希望我们辛苦的努力可以为您带来很多方便-->
+<META content=TRUE name=MSSmartTagsPreventParsing>
+<META http-equiv=MSThemeCompatible content=Yes><LINK href="favicon.ico" 
+rel="SHORTCUT ICON">
+<BODY onload="if(window.name!=''){document.body.style.width='98%';}">
+<DIV class=menuskin id=popmenu onmouseover=clearhidemenu() style="Z-INDEX: 100" 
+onmouseout=dynamichide(event)></DIV>
+<LINK id=stylecss href="style.css" type=text/css rel=stylesheet>
+<DIV id=top>
+<DIV class=left></DIV>
+<DIV class=center><SPAN>欢迎您：admin| <A class=menu 
+href="#">退出</A> | <A class=menu 
+href="#">短消息</A> | <A class=menu 
+href="#">自定义</A> | <A class=menu 
+href="#">返回论坛</A> </SPAN></DIV>
+<DIV class=right></DIV>
+<DIV class=space></DIV></DIV>
+<DIV id=head>
+<DIV class=left></DIV>
+<DIV class=center>
+<DIV class=title id=space_title>admin的个性首页--演示</DIV>
+<DIV class=intro id=space_intro>动网论坛，网络社区源动力！</DIV></DIV>
+<DIV class=right></DIV>
+<DIV class=space></DIV></DIV>
+<DIV id=menus>
+<DIV class=left></DIV>
+<DIV class=center>
+<UL>
+  <LI><A class=menu 
+  href="#"><SPAN>空间首页</SPAN> </A></LI>
+  <LI><A class=menu 
+  href="#"><SPAN>个人信息</SPAN> 
+  </A></LI>
+  <LI><A class=menu 
+  href="#"><SPAN>个人主题</SPAN> 
+  </A></LI>
+  <LI><A class=menu 
+  href="#"><SPAN>参与的评论</SPAN> 
+  </A></LI>
+  <LI><A class=menu 
+  href="#"><SPAN>收藏的论坛</SPAN> 
+  </A></LI>
+  <LI><A class=menu 
+  href="#"><SPAN>个人空间管理</SPAN> 
+  </A></LI></UL></DIV>
+<DIV class=right></DIV>
+<DIV class=space></DIV></DIV>
+<DIV id=spacemain>
+<DIV id=top_style>
+<H2></H2>
+<H1></H1></DIV>
+<DIV class=center>
+<DIV id=spacetool style="DISPLAY: none">
+<UL id=temppannal style="DISPLAY: none">
+  <LI class=module id=[$id]>
+  <DIV class=title><IMG class=cleargif onclick="Drag.del(this,'[$id]')" alt="" 
+  src="close.gif"> [$pannaltitle] </DIV>
+  <DIV class=cont>内容文本样式</DIV></LI></UL>
+<TABLE height="100%" cellSpacing=3 cellPadding=3 width="100%" border=0>
+  <FORM name=myspace onsubmit="return saveset();" action=?act=saveedit 
+  method=post>
+  <TBODY>
+  <TR>
+    <TD align=left width="75%"><INPUT class=button onclick=setmenu(this) type=button value=选取个性布局 name=layout>
+      <DIV class=setmenu id=div_layout style="DISPLAY: none">
+      <DIV class=title><IMG class=cleargif 
+      onclick=setmenu(parentNode.parentNode.previousSibling) alt="" 
+      src="close.gif">个性布局设置 </DIV>
+      <DIV class=content><IMG class=imgonclick onclick="setlayout('1')" alt="" 
+      src="layout1.gif"> <IMG class=imgonclick 
+      onclick="setlayout('3')" alt="" 
+      src="layout3.gif"> <IMG class=imgonclick 
+      onclick="setlayout('2')" alt="" 
+      src="layout2.gif"> </DIV></DIV><INPUT class=button onclick=setmenu(this) type=button value=选取系统模块 name=layout>
+      <DIV class=setmenu id=div_layout style="DISPLAY: none">
+      <DIV class=title><IMG class=cleargif 
+      onclick=setmenu(parentNode.parentNode.previousSibling) alt="" 
+      src="close.gif">系统模块 </DIV>
+      <DIV class=content>
+      <UL style="FLOAT: left">
+        <LI><INPUT id=add_foruminfo 
+        onclick="Drag.add(this.value,'LeftChannal',this.checked)" type=checkbox 
+        value=foruminfo name=addleft><LABEL>论坛信息</LABEL> 
+        <LI><INPUT id=add_userinfo 
+        onclick="Drag.add(this.value,'LeftChannal',this.checked)" type=checkbox 
+        value=userinfo name=addleft><LABEL>个人信息</LABEL> 
+        <LI><INPUT id=add_userfav 
+        onclick="Drag.add(this.value,'LeftChannal',this.checked)" type=checkbox 
+        value=userfav name=addleft><LABEL>个人收藏</LABEL> 
+        <LI><INPUT id=add_userfriend 
+        onclick="Drag.add(this.value,'LeftChannal',this.checked)" type=checkbox 
+        value=userfriend name=addleft><LABEL>我的好友</LABEL> 
+        <LI><INPUT id=add_usermsg 
+        onclick="Drag.add(this.value,'LeftChannal',this.checked)" type=checkbox 
+        value=usermsg name=addleft><LABEL>我的短信</LABEL> </LI></UL>
+      <UL style="FLOAT: left">
+        <LI><INPUT id=add_userboard 
+        onclick="Drag.add(this.value,'MainChannal',this.checked)" type=checkbox 
+        value=userboard name=addmain><LABEL>收藏版块</LABEL> 
+        <LI><INPUT id=add_usertopic 
+        onclick="Drag.add(this.value,'MainChannal',this.checked)" type=checkbox 
+        value=usertopic name=addmain><LABEL>我的主题</LABEL> 
+        <LI><INPUT id=add_userbest 
+        onclick="Drag.add(this.value,'MainChannal',this.checked)" type=checkbox 
+        value=userbest name=addmain><LABEL>我的精华</LABEL> 
+        <LI><INPUT id=add_userupload 
+        onclick="Drag.add(this.value,'MainChannal',this.checked)" type=checkbox 
+        value=userupload name=addmain><LABEL>我的图片</LABEL> 
+        <LI><INPUT id=add_userreply 
+        onclick="Drag.add(this.value,'MainChannal',this.checked)" type=checkbox 
+        value=userreply name=addmain><LABEL>我的评论</LABEL> </LI></UL>
+      <DIV style="CLEAR: both"></DIV></DIV></DIV><INPUT class=button type=button value=选取扩展模块 name=layout>
+      <DIV class=setmenu id=div_layout style="DISPLAY: none; WIDTH: 460px">
+      <DIV class=title><IMG class=cleargif 
+      onclick=setmenu(parentNode.parentNode.previousSibling) alt="" 
+      src="close.gif">选取频道模板 </DIV>
+      <DIV class=content><IFRAME id=selmodules src="about:blank" width="100%" 
+      height=450></IFRAME></DIV></DIV><INPUT class=button type=button value=风格模板定制 name=layout>
+      <DIV class=setmenu id=div_layout style="DISPLAY: none; WIDTH: 430px">
+      <DIV class=title><IMG class=cleargif 
+      onclick=setmenu(parentNode.parentNode.previousSibling) alt="" 
+      src="close.gif">选取风格模板 </DIV>
+      <DIV class=content><IFRAME id=selskins src="about:blank" width="100%" 
+      height=450></IFRAME></DIV></DIV></TD>
+    <TD rowSpan=2 whdth="25%"><INPUT class=button type=submit value=保存设置 name=dragsubmit><BUTTON 
+      class=button >退出设置</BUTTON> </TD></TR>
+  <TR>
+    <TD align=left><INPUT id=styleid type=hidden name=styleid> <INPUT 
+      id=stylepath type=hidden value=default07/ name=stylepath> <INPUT 
+      id=layoutset type=hidden value=3 name=layoutset> <INPUT id=layoutleft 
+      type=hidden value=userinfo,userboard name=layoutleft> <INPUT id=layoutmain 
+      type=hidden value=usermsg,userfriend,userupload,usertopic,userreply 
+      name=layoutmain> <INPUT id=layoutright type=hidden value=userfav,userbest 
+      name=layoutright> <INPUT id=val_space_title type=hidden value=小卢的个性首页 
+      name=spacetitle> <INPUT id=val_space_intro type=hidden 
+      value=试试能不能保存,介绍一下我的小窝!@ name=spaceintro> <IMG 
+      src="warning.gif"> 
+      点击个性空间标题和简介内容可以直接修改，若要重新排列模块，只要将其拖放到页面上的其他位置即可，完成更改后，请单击“保存设置”。 
+  </TD></TR></FORM></TBODY></TABLE></DIV></DIV>
+<DIV class=center>
+<UL class=column id=LeftChannal style="DISPLAY: block; WIDTH: 200px">
+  <LI class=module id=userinfo>
+  <DIV class=mobule_top>
+  <H2></H2>
+  <H1></H1></DIV>
+  <DIV class=title id=moduletitle><IMG class=block onclick=fold(event,this); 
+  alt="" src="dblock.gif">个人信息</DIV>
+  <DIV class=cont>
+  <DIV class=userface><IMG src="anyon.gif" border=0> 
+  </DIV>
+  <TABLE class=spacetable cellSpacing=1 cellPadding=0 align=center>
+    <TBODY>
+    <TR>
+      <TD class=border1 align=right width="30%">名字：</TD>
+      <TD class=border1 width="70%">admin</TD></TR>
+    <TR>
+      <TD class=border1 vAlign=top align=right>简介：</TD>
+      <TD class=border1>动网论坛，网络社区源动力！</TD></TR>
+    <TR>
+      <TD class=border0 align=middle colSpan=2><A 
+        href="#" 
+        ><IMG alt=给xiaolu发送一个短消息 
+        src="message.gif" align=middle border=0></A><A 
+        href="#" 
+        ><IMG alt=把xiaolu加入好友 
+        src="friend.gif" align=middle border=0></A><A 
+        href="mailto:sunwin@cndw.com"><IMG alt=点击这里发送电子邮件给sunwin 
+        src="email.gif" align=middle border=0></A> 
+    </TD></TR></TBODY></TABLE></DIV>
+  <DIV class=mobule_bot>
+  <H2></H2>
+  <H1></H1></DIV>
+  <LI class=module id=userboard>
+  <DIV class=mobule_top>
+  <H2></H2>
+  <H1></H1></DIV>
+  <DIV class=title id=moduletitle><IMG class=block onclick=fold(event,this); 
+  alt="" src="dblock.gif">我的版块 </DIV>
+  <DIV class=cont>
+  <DIV class=topic><A title=浏览该版块 
+  href="#"></A></DIV>
+  <DIV class=bottom>
+  <DIV class=bottom1></DIV>
+  <DIV class=bottom2></DIV></DIV></DIV>
+  <DIV class=mobule_bot>
+  <H2></H2>
+  <H1></H1></DIV></LI></UL>
+<UL class=column id=MainChannal style="DISPLAY: block; WIDTH: 536px">
+  <LI class=module id=usermsg>
+  <DIV class=mobule_top>
+  <H2></H2>
+  <H1></H1></DIV>
+  <DIV class=title id=moduletitle><IMG class=block onclick=fold(event,this); 
+  alt="" src="dblock.gif">我的短信 </DIV>
+  <DIV class=cont>
+  <TABLE class=spacetable cellSpacing=1 cellPadding=0 align=center>
+    <TBODY>
+    <TR>
+      <TD class=border1 align=middle width="35%" colSpan=2 
+        height=30>当前共有（7）条新短信未阅！ </TD></TR>
+    <TR>
+      <TD class=border2 align=middle width="60%">标题</TD>
+      <TD class=border2 align=middle width="40%">发送者</TD></TR>
+    <TR>
+      <TD class=border1 align=middle><A title=浏览短信 href="#">欢迎光临动网先锋论坛</A></TD>
+      <TD class=border1><A title=浏览该用户资料 href="#" >动网先锋论坛</A> <A title=回复该短信 href="#"><IMG src="re_mail.gif"></A></TD></TR>
+    <TR>
+      <TD class=border1 align=middle><A title=浏览短信 href="#">欢迎光临动网先锋论坛</A></TD>
+      <TD class=border1><A title=浏览该用户资料 href="#" >动网先锋论坛</A> <A title=回复该短信 href="#"><IMG src="re_mail.gif"></A></TD></TR>
+    <TR>
+      <TD class=border1 align=middle><A title=浏览短信 href="#">欢迎光临动网先锋论坛</A></TD>
+      <TD class=border1><A title=浏览该用户资料 href="#" >动网先锋论坛</A> <A title=回复该短信 href="#"><IMG src="re_mail.gif"></A></TD></TR>
+    <TR>
+      <TD class=border1 align=middle><A title=浏览短信 href="#">欢迎光临动网先锋论坛</A></TD>
+      <TD class=border1><A title=浏览该用户资料 href="#" >动网先锋论坛</A> <A title=回复该短信 href="#"><IMG src="re_mail.gif"></A></TD></TR>
+    <TR>
+      <TD class=border1 align=middle><A title=浏览短信 href="#">欢迎光临动网先锋论坛</A></TD>
+      <TD class=border1><A title=浏览该用户资料 href="#" >动网先锋论坛</A> <A title=回复该短信 href="#"><IMG src="re_mail.gif"></A></TD></TR>
+    <TR>
+      <TD class=border1 align=middle><A title=浏览短信 href="#">欢迎光临动网先锋论坛</A></TD>
+      <TD class=border1><A title=浏览该用户资料 href="#" >动网先锋论坛</A> <A title=回复该短信 href="#"><IMG src="re_mail.gif"></A></TD></TR>
+    <TR>
+      <TD class=border1 align=middle><A title=浏览短信 href="#">欢迎光临动网先锋论坛</A></TD>
+      <TD class=border1><A title=浏览该用户资料 href="#" >动网先锋论坛</A> <A title=回复该短信 href="#"><IMG src="re_mail.gif"></A></TD></TR>
+		</TBODY></TABLE></DIV>
+  <DIV class=mobule_bot>
+  <H2></H2>
+  <H1></H1></DIV>
+  <LI class=module id=userfriend>
+  <DIV class=mobule_top>
+  <H2></H2>
+  <H1></H1></DIV>
+  <DIV class=title id=moduletitle><IMG class=block onclick=fold(event,this); 
+  alt="" src="dblock.gif">我的好友 </DIV>
+  <DIV class=cont>
+  <TABLE class=spacetable cellSpacing=1 cellPadding=0 align=center>
+    <TBODY>
+    <TR>
+      <TD class=border2 align=middle width="35%">分类</TD>
+      <TD class=border2 align=middle width="65%">姓名</TD></TR>
+    <TR>
+      <TD class=border1 align=middle>我的好友</TD>
+      <TD class=border1><A 
+        href="#" 
+        >vincent119</A> </TD></TR>
+    <TR>
+      <TD class=border1 align=middle>我的好友</TD>
+      <TD class=border1><A 
+        href="#" 
+        >hxwinwin</A> </TD></TR>
+    <TR>
+      <TD class=border1 align=middle>我的好友</TD>
+      <TD class=border1><A 
+        href="#" 
+        >TestUser</A> </TD></TR>
+    <TR>
+      <TD class=border1 align=middle>我的好友</TD>
+      <TD class=border1><A href="#" 
+        >admin</A> </TD></TR></TBODY></TABLE></DIV>
+  <DIV class=mobule_bot>
+  <H2></H2>
+  <H1></H1></DIV>
+  <LI class=module id=userupload>
+  <DIV class=mobule_top>
+  <H2></H2>
+  <H1></H1></DIV>
+  <DIV class=title id=moduletitle><IMG class=block onclick=fold(event,this); 
+  alt="" src="dblock.gif">我的图片 </DIV>
+  <DIV class=cont>
+	<DIV id=newstitle>
+	  <DIV id=newtitle_bot>
+	  <P class=tophit0>图片</P>
+	  <P class=tophit0>附件</P>
+	  <P class=tophit0>附件2</P></DIV>
+	  <DIV id=newsbody><SPAN>pic</SPAN> <SPAN>files</SPAN> <SPAN>files2</SPAN></DIV>
+	</DIV>
+	<div style="clear:both;"></div>
+  </DIV>
+  <DIV class=mobule_bot>
+  <H2></H2>
+  <H1></H1></DIV>
+  <LI class=module id=usertopic>
+  <DIV class=mobule_top>
+  <H2></H2>
+  <H1></H1></DIV>
+  <DIV class=title id=moduletitle><IMG class=block onclick=fold(event,this); 
+  alt="" src="dblock.gif">我的主题() </DIV>
+  <DIV class=cont></DIV>
+  <DIV class=mobule_bot>
+  <H2></H2>
+  <H1></H1></DIV>
+  <LI class=module id=userreply>
+  <DIV class=mobule_top>
+  <H2></H2>
+  <H1></H1></DIV>
+  <DIV class=title id=moduletitle><IMG class=block onclick=fold(event,this); 
+  alt="" src="dblock.gif">我的评论()</DIV>
+  <DIV class=cont></DIV>
+  <DIV class=mobule_bot>
+  <H2></H2>
+  <H1></H1></DIV></LI></UL>
+<UL class=column id=RightChannal style="DISPLAY: block; WIDTH: 22%">
+  <LI class=module id=userfav>
+  <DIV class=mobule_top>
+  <H2></H2>
+  <H1></H1></DIV>
+  <DIV class=title id=moduletitle><IMG class=block onclick=fold(event,this); 
+  alt="" src="dblock.gif">个人收藏 </DIV>
+  <DIV class=cont>
+  <TABLE class=spacetable cellSpacing=1 cellPadding=0 align=center>
+    <TBODY>
+    <TR>
+      <TD class=border2 align=middle width="65%">信息</TD>
+      <TD class=border2 align=middle 
+width="35%">添加时间</TD></TR></TBODY></TABLE></DIV>
+  <DIV class=mobule_bot>
+  <H2></H2>
+  <H1></H1></DIV>
+  <LI class=module id=userbest>
+  <DIV class=mobule_top>
+  <H2></H2>
+  <H1></H1></DIV>
+  <DIV class=title id=moduletitle><IMG class=block onclick=fold(event,this); 
+  alt="" src="dblock.gif">我的精华 </DIV>
+  <DIV class=cont></DIV>
+  <DIV class=mobule_bot>
+  <H2></H2>
+  <H1></H1></DIV></LI></UL>
+<DIV class=space></DIV></DIV></DIV>
+<DIV id=bot_style>
+<H2></H2>
+<H1></H1></DIV>
+<DIV id=footer>
+<DIV class=left></DIV>
+<DIV class=center>
+<DIV class=copyright>动网先锋论坛,Copyright &copy;2000 - 2006 <A 
+href="#"><FONT face=Verdana, sans-serif Helvetica, 
+Arial,><B>Cndw<FONT color=#cc0000>.Com</FONT></B></FONT></A><BR>页面执行时间 0.0xxxx 
+秒, x 次数据查询。Powered By <A href="#" >Dvbbs</A> S.W.
+</DIV>
+<DIV class=intro></DIV></DIV>
+<DIV class=right></DIV></DIV>
+</BODY></HTML>

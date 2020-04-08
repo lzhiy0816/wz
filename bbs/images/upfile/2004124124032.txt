@@ -1,0 +1,19 @@
+我的ftp服务器，外网访问时候，可以用ie地址栏访问使用（可以复制粘贴里面的内容），但是无法用flashfxp,请教问题所在，否则的话无法进行断点传送。
+flashfxp提示的错误如下：
+WinSock 2.0
+正在连接到 nickzhou.vicp.net
+已连接到 nickzhou.vicp.net 端口 21
+220 Serv-U FTP Server v5.2 for WinSock ready...
+USER activex
+331 User name okay, need password.
+PASS (hidden)
+230 User logged in, proceed.
+SYST
+215 UNIX Type: L8
+PWD
+257 "/d:/topgun" is current directory.
+TYPE A
+200 Type set to A.
+PASV
+227 Entering Passive Mode (192,168,123,10,9,1)
+数据 Socket 错误: 连接已超时

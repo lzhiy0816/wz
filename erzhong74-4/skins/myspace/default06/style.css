@@ -1,0 +1,224 @@
+/* 全局定义 */
+body, td,th {font-family:Arial, Helvetica, sans-serif;font-size:12px;line-height : normal;}
+body {margin: 0;text-align: center;padding:0;color: #fff;background:#336699;}
+a {color:#005693;text-decoration: underline;}
+a:hover {color: #666;text-decoration: underline;}
+a.menu {color:#fff;text-decoration: underline;}
+a.menu:hover {color: #C8EAFF;text-decoration: underline;}
+ul {margin: 0px;padding: 0px;}
+img {border: none;}
+.space{clear:both;}
+table,div,li{word-wrap : break-word ;word-break : break-all ;}
+table.spacetable{text-align:left;width:98%;}
+th{background-color:#5FA2D2;border-bottom:1px solid #3B7FAF;}
+table.spacetable th{color:white;height:22px;text-indent:15px;}
+table.spacetopic th{color:white;height:22px;}
+table.spacetopic a,td{color:#666;}
+table.spacetopic a:visited,table.spacetopic a:hover{color:#005693;}
+.border0{}
+.border1{border-bottom:1px  dotted gray; height:22px; line-height:22px;}
+.border2{background-color:#eee;border-bottom:1px  dotted gray; height:22px; line-height:22px;}
+/* 页面宽度设置 */
+#top,#head,#menus,#footer,#spacemain,#bot_style{margin:0 auto;min-width: 760px;width: 950px;}
+#footer { width:950px; }
+/* 页面左右边框设置 */
+div.left,div.right{background-color:#3399CC;width:3px;height: 100%;font-size:12px; line-height:20px;}
+/* 顶部信息 */
+#top{ width:910px; padding-right:40px; height:27px; color:#fff;/*background-color: #3399CC;border-bottom:1px solid white;*/ margin-top:4px;}
+#top div.left{float: left;width:0px;}
+#top div.right{float:right;width:0px;}
+#top div.center{float:right;text-align: right;width:380px; padding:5px; }
+/*--------------------------------- */
+
+/* 顶部 */
+#head{height: 45px;padding:0px;color:white;/*background-color:#88A8D4;*/}
+#head div.left{float:left;width:0px;}
+#head div.right{float:right;width:0px;}
+#head div.center{margin:0px 0px 5px 0px;float: left;text-align: left;}
+#head div.center .title{font-size: 18px;height:20px;line-height:20px;overflow: hidden; color:#fff; font-weight:bold; padding-left:20px;}
+#head div.center .intro{width: auto; color:#fff; padding-left:20px; }
+/*--------------------------------- */
+
+/* 导航部份 */
+#menus{border-bottom:0px solid #3399CC;height: 35px;border-bottom:20px solid #4791C5; width:950px; background:url("menu_bg.gif")}
+#menus div.left{float:left;width:0px;}
+#menus div.right{float:right;width:0px;}
+#menus div.center{float:left;line-height:normal;}
+#menus ul{padding:0px 0px 0px 280px;list-style:none;}
+#menus li{margin:0;padding:0;float:left;}
+#menus li a{/*background:url("menuleft.gif") no-repeat left top;*/text-decoration:none; color:#fff;}
+#menus li a span{background:url(menu_left_bg.gif) repeat-y top left; /*background:url("menuright.gif") no-repeat right top;*/padding:12px 10px 8px 10px;color:#fff;display:block; font-weight:bold; margin-left:1px;}
+
+/* Commented Backslash Hack hides rule from IE5-Mac \*/
+#menus li a span {float:none;}
+ /* End IE5-Mac hack */
+
+
+/*--------------------------------- */
+/* 管理工具样式 */
+#spacetool{height:80px;width:96%;margin:0 auto;clear:both;	}
+#spacetool table{background-color:#fff;border:1px dashed #88A8D4;color:#666; margin-top:5px;}
+#spacetool .button{border:0px solid #000; background:#444 url("button_bg.gif"); color:#fff; height:25px;cursor : pointer; margin-left:2px;}
+.cleargif{float: right; margin: 2px 5px 0 0;}
+img.block{float: left;margin: 2px 5px 0 5px;}
+.cleargif , .imgonclick,img.block{cursor:pointer;border:0px;}
+#moduledel{display:none;}
+/*--------------------------------- */
+/* 底部 */
+#footer{clear:both;height:60px;margin-top:1px; padding-top:5px;}
+#footer div.left{float:left;width:0px;}
+#footer div.right{float:right;width:0px;}
+#footer div.center{width:98%;float:left;}
+#footer div.copyright{text-align:right; color:#fff; line-height:20px;}
+.copyright a {color:#fff;}
+.copyright a:hover {color:#C8EAFF;}
+#top_style { display:none }
+#bot_style { background:#fff; height:21px; border-bottom:10px solid #4791C5; border-left:1px solid #4791C5; border-right:1px solid #4791C5; width:948px;}
+#bot_style h1 { display:none; }
+#bot_style h2 { display:none; }
+/*--------------------------------- */
+/* 中间主体 */
+#spacemain{color:#666;background:white; }
+#spacemain a{color:#005693;text-decoration: none;}
+#spacemain a:visited,#spacemain a:hover{color:#005693;text-decoration: none; }
+#spacemain div.center{clear:both;padding:0px;background:#fff;margin:0px; width:948px;text-align:center; border-left:1px solid #4791C5; border-right:1px solid #4791C5; }
+.column{margin:0px;padding:0px;float:left;overflow:hidden;}
+.column div{font-size:14px; }
+
+.module{ margin:6px 0px 0px 3px; padding:0px;list-style:none; font-size:0px; line-height:0px; }
+.mobule_top{ display:none}
+.mobule_top h1 { width:4px; height:3px; background:url("title_left.gif"); float:left; margin:0px; padding:0px;line-height:0px; font-size:0px;}
+.mobule_top h2 { width:4px; height:3px; background:url("title_right.gif"); float:right; margin:0px; padding:0px;line-height:0px; font-size:0px; }
+.mobule_bot{display:none}
+.mobule_bot h1 { width:5px; height:3px; background:url("title_bot_left.gif"); float:left; margin:0px; padding:0px;line-height:0px; font-size:0px;}
+.mobule_bot h2 { width:5px; height:3px; background:url("title_bot_right.gif"); float:right; margin:0px; padding:0px;line-height:0px; font-size:0px; }
+.module .title{background:#5FA2D2;padding:0px;width:auto;overflow:hidden;font-weight:bold;color:#fff;height:24px;line-height:24px; margin:0px;border:1px solid #4791C5; font-size:12px; border-bottom:0px;}
+.cont{padding:5px;text-align:center;overflow:hidden;border:1px solid #4791C5; border-top:0px; background-color:#fff;}
+#spacemain .topic a,#spacemain .topic a:link,#spacemain .topic a:visited{text-decoration: none;color:#005693;}
+#spacemain .topic a:hover{color:#f60;text-decoration: underline;}
+.bottom{width:96%;height:30px; font-size:12px; line-height:20px;}
+.bottom .bottom1{width:60%;float:left;text-align:left; font-size:12px; line-height:20px;}
+.bottom .bottom2{width:40%;float:left;color:gray;text-align:right; font-size:12px; line-height:20px;}
+#temppannal{display:none;}
+#LeftChannal{}
+#MainChannal{}
+#MainChannal .module{}
+#RightChannal{}
+#MainChannal .module .title{text-align:left;}
+#LeftChannal .topic,#RightChannal .topic{width:96%;text-align:left; font-size:12px; line-height:20px;}
+#LeftChannal .bottom,#RightChannal .bottom{display:none;}
+#LeftChannal .bottom2,#RightChannal .bottom2{display:none;}
+#MainChannal .bottom{border-bottom:1px dashed #88A8D4;}
+#MainChannal .topic{margin:5px 0 5px 0;font-size:12px;color:#005693;text-align:left;text-indent:10px;padding:2px 0 2px 0;font-weight:bold;}
+.hide .cont{display:none;}
+.ghost{border:1px dashed gray;}
+.float{position:absolute;z-index:100;margin:0px;padding:0px;overflow:hidden;list-style:none;-moz-opacity:.75;filter:Alpha(opacity=75);}
+.webNote{border:1px dashed #ffffe0;}
+textarea.webNote{overflow:hidden;width:840px;background:transparent; height:15px; margin:0px; padding:0px;}
+#LeftChannal .body1,#RightChannal .body1{
+}
+#MainChannal .body1{
+	float:left;width:50%;
+}
+/*--------------------------------- */
+/*设置菜单样式*/
+div.setmenu{border:1px solid #222;padding:3px;color:#222;width: 260px;position:absolute;z-index :100;background-color:#eee;}
+div.setmenu .title{margin-top:4px;font-weight:bold;padding:2px;background-color:#eee;border-bottom:3px solid #999;height:22px;line-height:22px;}
+div.setmenu .title{margin-top:4px;padding:2px;}
+div.setmenu ul{margin:0px;margin-left:10px;padding:0px;overflow:hidden;list-style:none;}
+#div_layout{}
+
+/*--------------------------------- */
+/* 新闻菜单模式 */
+#newstitle {
+	CLEAR: both; MARGIN-BOTTOM: 16px;
+}
+#newstitle P {
+	FLOAT: left; LINE-HEIGHT: 21px;margin:0;
+}
+#newstitle P.topTit {
+	FONT-WEIGHT: bold; WIDTH: 117px;
+}
+/* 未点击样式标题 */
+#newstitle P.tophit0 {
+	BACKGROUND: #eee; BORDER-LEFT: #fff 1px solid; WIDTH: 80px; CURSOR: pointer
+}
+/* 点击样式标题 */
+#newstitle P.tophit1 {
+	BACKGROUND: #5FA2D2; BORDER-LEFT: #fff 1px solid; WIDTH: 80px; COLOR:#fff;
+}
+#newstitle #newtitle_bot {
+	BORDER-BOTTOM: #5FA2D2 3px solid;
+}
+#newstitle #newsbody {
+	clear:both;
+	LINE-HEIGHT: 26px;
+	PADDING-TOP: 7px;
+	TEXT-ALIGN: left;
+	width:96%;
+}
+#newstitle .dis {
+	DISPLAY: block;
+}
+#newstitle .undis {
+	DISPLAY: none;
+}
+#newsbody span{
+
+}
+/*--------------------------------- */
+/* rss 数据显示 */
+#rsschannel{
+
+}
+#rsschannel ul{
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+
+#rsschannel li{
+	margin-top:4px;
+}
+
+#rsschannel .itemtitle{
+	font-size : 12px;
+	line-height : 18px;
+}
+
+#rsschannel .itemcontent{
+	font-size : 12px;
+	text-indent : 24px;
+	line-height : 18px;
+	word-wrap:break-word;
+	word-break:break-all;
+}
+
+#rsschannel .itemposttime{
+	font-size : 12px;
+	color:gray;
+}
+#rsschannel .hide{
+	display:none;
+}
+#rsschannel ol{
+	margin:0;padding:0;list-style:none;
+}
+#rsschannel .category{
+	font-size : 12px;
+	color:gray;
+}
+
+#up_img{
+	float:left;
+	TEXT-ALIGN: center;
+	margin-left:6px;
+	width:130px;
+	height:120px;
+	border : 2px outset transparent;
+}
+#up_img img.viewshow{
+	width:90px;
+	height:90px;
+	border:0;
+}

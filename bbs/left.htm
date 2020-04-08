@@ -1,0 +1,134 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=gb2312"><script src="inc/ybb.js"></script>
+<style type="text/css">
+BODY {
+	BACKGROUND:799ae1; MARGIN: 0px; FONT: 9pt 宋体
+}
+TD {
+	FONT: 12px 宋体
+}
+A {
+	FONT: 12px 宋体; COLOR: #000000; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #428eff; TEXT-DECORATION: underline
+}
+.sec_menu {
+	BORDER-RIGHT: white 1px solid; BACKGROUND: #d6dff7; OVERFLOW: hidden; BORDER-LEFT: white 1px solid; BORDER-BOTTOM: white 1px solid
+}
+
+.menu_title SPAN {
+	FONT-WEIGHT: bold; LEFT: 8px; COLOR: #215dc6; POSITION: relative; TOP: 2px
+}
+
+.menu_title2 SPAN {
+	FONT-WEIGHT: bold; LEFT: 8px; COLOR: #428eff; POSITION: relative; TOP: 2px
+}
+</style>
+
+<script src="inc/ybb.js"></script>
+</head>
+
+
+
+
+
+
+<table cellspacing="0" cellpadding="0" width="158" align="center"><tr><td valign="bottom" height="42">
+	<a href="javascript:location.reload()">
+	<img height="38" src="images/title.gif" width="158" border="0"></a></td></tr><tr><td class="menu_title" onmouseover="this.className='menu_title2';" onmouseout="this.className='menu_title';" background="images/title_bg_quit.gif" height="25"><span><a target="yuzi_frame" href="main.asp" onclick="message()"><b><font color="215DC6">首页</font></b></a> | <script>
+var undefined
+if (getCookie('username')==undefined){
+document.write("<a target=yuzi_frame href=login.asp onClick=message()><font color=215DC6><B>登录</a>")
+}else
+{
+document.write("<a target=yuzi_frame href=login.asp?menu=out onClick=message()><font color=215DC6><B>退出</a>")
+}
+          </script>
+</font></a></b></span></td>
+
+</tr>
+
+<tr>
+<td align="center" onMouseOver=aa('up') onMouseOut=StopScroll()><font face="Webdings" color="#FFFFFF">5</font>
+</td>
+</tr>
+</table>
+<script>
+var he=document.body.clientHeight-105
+document.write("<div id=tt style=height:"+he+";overflow:hidden>")
+</script>
+
+
+<table cellspacing="0" cellpadding="0" width="158" align="center"><tr><td class="menu_title" onmouseover="this.className='menu_title2';" onclick="showsubmenu(1);loadThreadFollow()" onmouseout="this.className='menu_title';" style="cursor:hand" background="images/admin_left_1.gif" height="25"><span>论坛列表 </span></td></tr><tr><td id="submenu1" style="DISPLAY: none"><div class="sec_menu"><div align="center"><center><table cellspacing="0" cellpadding="5" width="100%" style="border-collapse: collapse"><tr><td height="20" id="followTd">Loading...</td></tr></table></center></div></div><table cellspacing="0" cellpadding="0" width="135" align="center"><tr><td height="20"></td></tr></table></div></td></tr></table><table cellspacing="0" cellpadding="0" width="158" align="center"><tr><td class="menu_title" id="menuTitle1" onmouseover="this.className='menu_title2';" onclick="showsubmenu(3)" onmouseout="this.className='menu_title';" style="cursor:hand" background="images/admin_left_2.gif" height="25"><span>控制面板 </span></td></tr><tr><td id="submenu3" style="DISPLAY: none"><div class="sec_menu" style="WIDTH: 158px"><table cellspacing="0" cellpadding="0" width="135" align="center"><tr><td height="20"><a target="yuzi_frame" href="usercp.asp" onclick="message()">控制面板首页</a></td></tr><tr><td height="20"><a target="yuzi_frame" href="EditProfile.asp" onclick="message()">基本资料修改</a></td></tr><tr><td height="20"><a target="yuzi_frame" href="EditProfile.asp?menu=contact" onclick="message()">编辑论坛选项</a></td></tr><tr><td height="20"><a target="yuzi_frame" href="EditProfile.asp?menu=pass" onclick="message()">用户密码修改</a></td></tr><tr><td height="20"><a target="yuzi_frame" href="message.asp" onclick="message()">用户短信服务</a></td></tr><tr><td height="20"><a target="yuzi_frame" href="friend.asp" onclick="message()">编辑好友列表</a></td></tr><tr><td height="20"><a target="yuzi_frame" href="favorites.asp" onclick="message()">用户收藏管理</a></td></tr></table></div><div style="WIDTH: 158px"><table cellspacing="0" cellpadding="0" width="135" align="center"><tr><td height="20"></td></tr></table></div></td></tr></table><table cellspacing="0" cellpadding="0" width="158" align="center"><tr><td class="menu_title" id="menuTitle1" onmouseover="this.className='menu_title2';" onclick="showsubmenu(2)" onmouseout="this.className='menu_title';" style="cursor:hand" background="images/admin_left_3.gif" height="25"><span>个人服务</span> </td></tr><tr><td id="submenu2" style="DISPLAY: none"><div class="sec_menu" style="WIDTH: 158px"><table cellspacing="0" cellpadding="0" width="135" align="center"><tr><td height="20">
+<a onclick="message()" target="yuzi_frame" href="login.asp">更换用户</a></td><td height="20">
+<a target="yuzi_frame" href="ShowBBS.asp?menu=5" onclick="message()">我的帖子</a></td></tr><tr><td height="20"><a target="yuzi_frame" onclick="message()" href="upface.asp">上传头像</a></td><td height="20"><a target="yuzi_frame" href="upphoto.asp" onclick="message()">上传照片</a></td></tr><tr><td height="20">
+<a target="yuzi_frame" onclick="message()" href="calendar.asp">我的日记</a></td><td height="20">
+					<a target="yuzi_frame" onclick="message()" href="popedom.asp">我的权限</a></td></tr></table></div><div style="WIDTH: 158px"><table cellspacing="0" cellpadding="0" width="135" align="center"><tr><td height="20"></td></tr></table></div></td></tr><tr><td class="menu_title" id="menuTitle1" onmouseover="this.className='menu_title2';" onclick="showsubmenu(6)" onmouseout="this.className='menu_title';" style="cursor:hand" background="images/admin_left_8.gif" height="25"><span>社区设施</span> </td></tr><tr><td id="submenu6" style="DISPLAY: none"><div class="sec_menu" style="WIDTH: 158px"><table cellspacing="0" cellpadding="0" width="135" align="center"><tr><td height="20"><a target="yuzi_frame" href="shop.asp" onclick="message()">社区商店</a></td><td height="20"><a target="yuzi_frame" href="bank.asp" onclick="message()">社区银行</a></td></tr><tr><td height="20"><a target="yuzi_frame" href="prison.asp" onclick="message()">社区监狱</a></td><td height="20"><a target="yuzi_frame" href="faction.asp" onclick="message()">社区帮派</a></td></tr><tr><td height="20"><a target="yuzi_frame" href="consort.asp" onclick="message()">社区配偶</a></td><td height="20"><a target="yuzi_frame" href="star.asp" onclick="message()">社区
+相册</a></td></tr><tr><td height="20">
+<a target="yuzi_frame" href="play.asp" onclick="message()">社区赌场</a></td><td height="20">
+<a target="yuzi_frame" href="race.asp" onclick="message()">社区赛马</a></td></tr><tr>
+<td height="20"><a target="yuzi_frame" href="ShowFile.asp" onclick="message()">社区展区</a></td>
+<td height="20"><a target="yuzi_frame" href="Gobang.asp" onclick="message()">五 子 棋</a></td></tr></table></div><div style="WIDTH: 158px"><table cellspacing="0" cellpadding="0" width="135" align="center"><tr><td height="20"></td></tr></table></div></td></tr></table><table cellspacing="0" cellpadding="0" width="158" align="center"><tr><td class="menu_title" id="menuTitle1" onmouseover="this.className='menu_title2';" onclick="showsubmenu(4)" onmouseout="this.className='menu_title';" style="cursor:hand" background="images/admin_left_6.gif" height="25"><span>社区风格 </span></td></tr><tr><td id="submenu4" style="DISPLAY: none"><div class="sec_menu" style="WIDTH: 158px"><table cellspacing="0" cellpadding="0" width="135" align="center"><tr><td height="20"><a target="yuzi_frame" href="cookies.asp?menu=skins" onclick="message()">默认风格</a></td><td height="20">
+<a target="yuzi_frame" onclick="message()" href="cookies.asp?menu=skins&no=1">橘色风格</a></td></tr><tr><td height="20"><a target="yuzi_frame" href="cookies.asp?menu=skins&no=2" onclick="message()">绿色风格</a></td><td height="20"><a target="yuzi_frame" href="cookies.asp?menu=skins&no=3" onclick="message()">灰色风格</a></td></tr></table></div><div style="WIDTH: 158px"><table cellspacing="0" cellpadding="0" width="135" align="center"><tr><td height="20"></td></tr></table></div></td></tr></table><table cellspacing="0" cellpadding="0" width="158" align="center"><tr><td class="menu_title" id="menuTitle1" onmouseover="this.className='menu_title2';" onclick="showsubmenu(5)" onmouseout="this.className='menu_title';" style="cursor:hand" background="images/admin_left_5.gif" height="25"><span>社区概括</span> </td></tr><tr><td id="submenu5" style="DISPLAY: none"><div class="sec_menu" style="WIDTH: 158px"><table cellspacing="0" cellpadding="0" width="135" align="center"><tr><td height="20" align="center"><a target="yuzi_frame" href="online.asp" onclick="message()">在线情况</a></td><td height="20" align="center"><a target="yuzi_frame" href="online.asp?menu=cutline" onclick="message()">在线图例</a></td></tr><tr><td height="20" align="center"><a target="yuzi_frame" href="online.asp?menu=sex" onclick="message()">性别图例</a></td><td height="20" align="center"><a target="yuzi_frame" href="online.asp?menu=level" onclick="message()">级别图例</a></td></tr><tr><td height="20" align="center"><a target="yuzi_frame" href="online.asp?menu=board" onclick="message()">主题数图例</a></td><td height="20" align="center"><a target="yuzi_frame" href="online.asp?menu=tolrestore" onclick="message()">帖子数图例</a></td></tr><tr><td height="20" align="center"><a target="yuzi_frame" href="usertop.asp" onclick="message()">会员排行榜</a></td><td height="20" align="center"><a target="yuzi_frame" href="adminlist.asp" onclick="message()">管理员列表</a></td></tr></table></div></td></tr></table>&nbsp; <table cellspacing="0" cellpadding="0" width="158" align="center"><tr><td class="menu_title" id="menuTitle1" onmouseover="this.className='menu_title2';" onmouseout="this.className='menu_title';" background="images/admin_left_9.gif" height="25"><span>BBSxp信息</span> </td></tr><tr><td><div class="sec_menu" style="WIDTH: 158px"><table cellspacing="0" cellpadding="0" width="135" align="center"><tr><td height="20"><br>版本：BBSxp 2004<br><br>版权所有：<br>Yuzi工作室(<a target="_blank" href="http://www.yuzi.net/"><font color="000000">Yuzi<font color="FF0000">.Net</font></a>)<br><br></font></td></tr></table></div></td></tr></table></tr></tbody></table>
+</div>
+
+<table cellspacing="0" cellpadding="0" width="158" align="center">
+<tr>
+<td align="center" onMouseOver=aa('Down') onMouseOut=StopScroll() valign="bottom"><font face="Webdings" color="#FFFFFF">6</font>
+</td>
+</tr>
+</table>
+
+<script>
+
+
+
+
+function aa(Dir)
+{tt.doScroll(Dir);Timer=setTimeout('aa("'+Dir+'")',100)}//这里100为滚动速度
+function StopScroll(){if(Timer!=null)clearTimeout(Timer)}
+
+
+
+function initIt(){
+divColl=document.all.tags("DIV");
+for(i=0; i<divColl.length; i++) {
+whichEl=divColl(i);
+if(whichEl.className=="child")whichEl.style.display="none";}
+}
+function expands(el) {
+whichEl1=eval(el+"Child");
+if (whichEl1.style.display=="none"){
+initIt();
+whichEl1.style.display="block";
+}else{whichEl1.style.display="none";}
+}
+var tree= 0;
+function loadThreadFollow(){
+if (tree==0){
+document.frames["hiddenframe"].location.replace("tree.asp");
+tree=1
+}
+}
+
+function showsubmenu(sid)
+{
+whichEl = eval("submenu" + sid);
+if (whichEl.style.display == "none")
+{
+eval("submenu" + sid + ".style.display=\"\";");
+}
+else
+{
+eval("submenu" + sid + ".style.display=\"none\";");
+}
+}
+
+
+function message()
+{
+window.open('loading.htm','message')
+}
+</script>
+
+<iframe height="0" width="0" name="hiddenframe"></iframe>

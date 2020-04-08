@@ -1,0 +1,108 @@
+;**************************************************
+;一键多功能识别的程序
+;--------------------------------------------------
+;lzhiy0816
+;http://www.zy816.com
+;http://www.zy816.com/lzhiy0816
+;Copyright 2006 lzhiy0816's zy816
+;All rights Reserved
+;作者：梁志英
+;2006.04.21
+;onepush.asm
+;--------------------------------------------------
+;短时按p3.2按钮1次，点亮p0.0灯
+;连续按p3.2按钮2次，点亮p0.0、p0.1灯
+;连续按p3.2按钮3次，点亮p0.0、p0.1、p0.2灯
+;连续按p3.2按钮4次，点亮p0.0、p0.1、p0.2、p0.3灯
+;长时按p3.2按钮1次，灭所有灯
+;**************************************************
+
+          org 0000h
+          sjmp main
+
+          org 0030h
+main:     mov p0,#0ffh             ;置初值
+          mov p3,#0ffh
+
+lzy01:    jb p3.2,$                ;等待按钮按下
+          acall delay_fd           ;防抖延时子程序
+          jb p3.2,$-5
+          mov r0,#250              ;\
+dy1_1:    mov r1,#25               ;|->判断按钮松开时，是否超过延时
+dy1_2:    mov r2,#40               ;|  时间(1s)。如果延时结束时，按
+dy1_3:    jb p3.2,lzy02            ;|  钮仍未松开，则按钮为灭所有灯操
+          djnz r2,dy1_3            ;|  作；否则，按钮为计一次按动操
+          djnz r1,dy1_2            ;|  作，并转到lzy02
+          djnz r0,dy1_1            ;/
+          mov p0,#0ffh             ;按钮松开时间超过1s，灭所有灯
+          jnb p3.2,$               ;等待按钮松开
+          nop
+          nop
+          sjmp lzy01
+
+lzy02:    mov dptr,#lzy03
+          acall lzy
+          mov p0,#0ffh
+          clr p0.0                 ;点亮1盏灯
+          nop
+          nop
+          sjmp lzy01
+
+lzy03:    jnb p3.2,$               ;等待按钮松开
+          mov dptr,#lzy04
+          acall lzy
+          mov p0,#0ffh
+          mov p0,#0fch             ;点亮2盏灯
+          nop
+          nop
+          sjmp lzy01
+
+lzy04:    jnb p3.2,$               ;等待按钮松开
+          mov dptr,#lzy05
+          acall lzy
+          mov p0,#0ffh
+          mov p0,#0f8h             ;点亮3盏灯
+          nop
+          nop
+          ajmp lzy01
+
+lzy05:    jnb p3.2,$               ;等待按钮松开
+          mov p0,#0ffh             ;先清p0口
+          mov p0,#0f0h             ;然后再点亮点4盏灯
+          nop
+          nop
+          ajmp lzy01
+
+;------------------------------------------
+;延时时间内判断按钮状态子程序
+;------------------------------------------
+lzy:      mov a,#00h
+          mov r0,#250              ;\
+dy_1:     mov r1,#25               ;|->在延时时间(1s)内，判断是否再
+dy_2:     mov r2,#20               ;|  次按下按钮，是则再计1次按动操
+dy_3:     jb p3.2,dy_4             ;|  作，并转到dptr指向的单元 
+          acall delay_fd           ;|
+          jb p3.2,dy_4             ;|
+          jmp @a+dptr              ;|
+dy_4:     djnz r2,dy_3             ;|
+          djnz r1,dy_2             ;|
+          djnz r0,dy_1             ;/
+          nop
+          nop
+          ret
+
+;------------------------------------------
+;防抖延时子程序
+;------------------------------------------
+delay_fd: mov r4,#100
+dey01:    mov r3,#100
+          djnz r3,$
+          djnz r4,dey01
+          nop
+          nop
+          ret
+
+   nop
+   nop
+   end
+

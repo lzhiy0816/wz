@@ -1,0 +1,20 @@
+A:visited{TEXT-DECORATION: none}
+A:active{TEXT-DECORATION: none}
+A:link{text-decoration: none;}
+A:hover{TEXT-DECORATION: underline overline}
+
+DIV,FORM,P,TD,BODY{FONT-SIZE:9pt;}
+BODY{
+scrollbar-face-color: #dbeedd;
+scrollbar-highlight-color: #FFFFFF;
+scrollbar-shadow-color: darkseagreen;
+scrollbar-3dlight-color: #dbeedd;
+scrollbar-arrow-color: darkseagreen;
+scrollbar-track-color: #f3faf4;
+scrollbar-darkshadow-color: #f3faf4;
+}
+#TableTitleLink A:link,#TableTitleLink A:visited{COLOR:ffffff;}
+.a1{BACKGROUND-IMAGE:url('title.gif');COLOR:ffffff;}
+.a2{BACKGROUND-COLOR: 89959B;}
+.a3{BACKGROUND-COLOR: EDEDED;}
+.a4{BACKGROUND-COLOR: F5F5F5;}

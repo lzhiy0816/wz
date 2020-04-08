@@ -1,0 +1,292 @@
+<html><!-- #BeginTemplate "/Templates/000.dwt" -->
+<head>
+<title>〖自我介绍网站（临时）〗</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+
+<STYLE type=text/css>
+<!--
+body { font-family:"Verdana", "Arial", "Helvetica", "sans-serif"; font-size: 10pt; line-height:18px}
+p {  font-family:"Verdana", "Arial", "Helvetica", "sans-serif"; font-size: 10pt; line-height:18px}
+a:link {  color: #0033cc; text-decoration: none}
+a:visited {  color: #0033cc;  text-decoration: none}
+a:hover {  color: #FF0033; text-decoration: underline}
+td {  font-family: "Verdana", "Arial", "Helvetica", "sans-serif"; font-size: 10pt; line-height:18px}
+.CompanyName {font-family: "Verdana", "Arial", "Helvetica", "sans-serif"; font-size: 23pt}
+-->
+</STYLE>
+
+<!-- #BeginEditable "head" -->
+<!-- #EndEditable -->
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<!-- #BeginEditable "doctitle" --> 
+
+<TD vAlign=center> 
+      <style type=text/css>BODY {
+	FONT-SIZE: 12px; COLOR: #000000; BACKGROUND-COLOR: #ffffff
+}
+TD {
+	FONT-SIZE: 12px; COLOR: #000000
+}
+TR {
+	FONT-SIZE: 12px; COLOR: #000000
+}
+A:link {
+	COLOR: #336699; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: #6699ff; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: red
+}
+FONT {
+	TEXT-DECORATION: none
+}
+INPUT.text {
+	BORDER-RIGHT: #101010 1px solid; BORDER-TOP: #101010 1px solid; BORDER-LEFT: #101010 1px solid; COLOR: #000000; BORDER-BOTTOM: #101010 1px solid; BACKGROUND-COLOR: #ffffff
+}
+INPUT.file {
+	BORDER-RIGHT: #101010 1px solid; BORDER-TOP: #101010 1px solid; BORDER-LEFT: #101010 1px solid; COLOR: #000000; BORDER-BOTTOM: #101010 1px solid; BACKGROUND-COLOR: #ffffff
+}
+SELECT {
+	BORDER-RIGHT: #101010 1px solid; BORDER-TOP: #101010 1px solid; BORDER-LEFT: #101010 1px solid; COLOR: #000000; BORDER-BOTTOM: #101010 1px solid; BACKGROUND-COLOR: #ffffff
+}
+TEXTAREA {
+	BORDER-RIGHT: #101010 1px solid; BORDER-TOP: #101010 1px solid; BORDER-LEFT: #101010 1px solid; COLOR: #000000; BORDER-BOTTOM: #101010 1px solid; BACKGROUND-COLOR: #ffffff
+}
+INPUT.buttom {
+	BORDER-TOP-WIDTH: 1px; PADDING-RIGHT: 1px; PADDING-LEFT: 1px; BORDER-LEFT-WIDTH: 1px; FONT-SIZE: 12px; BORDER-LEFT-COLOR: #000000; BORDER-BOTTOM-WIDTH: 1px; BORDER-BOTTOM-COLOR: #000000; PADDING-BOTTOM: 1px; COLOR: #000000; BORDER-TOP-COLOR: #000000; PADDING-TOP: 1px; HEIGHT: 18px; BACKGROUND-COLOR: #dedfdf; BORDER-RIGHT-WIDTH: 1px; BORDER-RIGHT-COLOR: #000000
+}
+</style>
+<br>      
+  <!-- form.cjs -->
+            <SCRIPT language=JavaScript1.2>
+function check(theForm,textlengh) {
+	if(theForm.xingming.value == "" || theForm.liuyanneirong.value == "" ) {
+		alert("对不起!姓名和留言内容必须填写!");
+		return false;
+	}
+	if (theForm.liuyanneirong.value.length > textlengh){
+		alert("对不起！留言长度不能超过1000字符");
+		return false;
+	}	
+}
+
+</SCRIPT>
+
+            <form name="form1" method="post" action="leaveadd.asp">
+    <TABLE cellSpacing=1 cellPadding=0 width="75%" align=center border=0 height="60">
+    <TBODY> 
+     <TR>
+      <td><img src="image/lyb.gif" width="150" height="50"></td>        
+      <td> 
+          <div align="right">
+            <input onClick="window.location='leaveword.asp'" type=button value=查看留言 name=Button3>
+          </div>
+      </td>        
+     </TR>
+    </TBODY>
+    </TABLE>       
+
+	<TABLE cellSpacing=1 cellPadding=0 width="75%" align=center border=1 bordercolor="#999999" height="30">
+      <TBODY> 
+      <TR bgColor=#e7e7e7>
+            
+        <TD align=middle colSpan=2 bgcolor="#dddddd"><font color="#000000">请 填 
+          写 留 言</font></TD>
+          </TR></TBODY></TABLE>
+        
+    <TABLE cellSpacing=1 cellPadding=5 width="75%" align=center border=1 bordercolor="#999999" bordercolorlight="#999999" bordercolordark="#ffffff">
+      <TBODY> 
+      <TR> 
+        <TD align=middle width="19%">您的姓名：</TD>
+                
+        <TD width="81%"> 
+          <INPUT class="text" maxLength="50" size="15" 
+                  name="xingming">
+          &nbsp;<FONT color=#ff0000><b>*</b></FONT> &nbsp;&nbsp;&nbsp; </TD>
+      </TR>
+              
+      <TR> 
+        <TD align=middle width="19%">密　　码：</TD>
+                
+        <TD vAlign=top width="81%"> 
+          <INPUT class="text" maxLength="16" 
+                  size="16" name="password" type="password">
+               &nbsp;&nbsp; <INPUT class=text type=hidden 
+                  maxLength=16 size=10 name=aicq>
+          <font color="#006600">（用于修改您的留言）</font> </TD>
+          </TR>
+              
+      <TR> 
+        <TD align=middle width="19%">密码确认：</TD>
+                
+        <TD vAlign=top width="81%"> 
+          <INPUT class="text" maxLength="16" 
+                  size="16" name="password1" type="password">
+               &nbsp;&nbsp; <INPUT class=text type=hidden 
+                  maxLength=16 size=10 name=aicq>
+          <font color="#006600">（如密码已填则必须确认）</font> </TD>
+          </TR>
+              
+      <TR> 
+        <TD align=middle width="19%">头　　像：</TD>
+                
+        <TD vAlign=top width="81%"> 
+           <input type=hidden name=face value=101>
+		   <a href=#f onclick="window.open('facelist.htm','tmpWin','menubar=0,scrollbars=yes');"> 
+              <img src="face/101.gif" name="picShow" border="0" alt="选择一个新头像">
+		   </a>&nbsp;&nbsp;&nbsp;&nbsp; 
+           <INPUT class=text type=hidden maxLength=16 size=10 name=aicq>
+           <font color="green">（点头像选择其他头像）</font>
+        </TD>
+      </TR>
+      <TR> 
+        <TD align=middle width="19%">来自哪里：</TD>
+                
+        <TD vAlign=top width="81%"> 
+          <INPUT class="text" maxLength="15" 
+                  size="15" name="dizhi"> &nbsp;&nbsp; <INPUT class=text type=hidden 
+                  maxLength=15 size=10 name=icq>
+        </TD>
+      </TR>
+			  
+      <TR> 
+        <TD align=middle width="19%">电子邮件：</TD>
+                
+        <TD vAlign=top width="81%"> 
+          <INPUT class="text" maxLength="52" 
+                  size="52" name="email"> &nbsp;&nbsp; <INPUT class=text type=hidden 
+                  maxLength=25 size=10 name=oicq>
+        </TD>
+      </TR>
+              
+      <TR> 
+        <TD align=middle width="19%">您的网址：</TD>
+                
+        <TD vAlign=top width="81%">
+<INPUT class="text" maxLength="70" 
+                  size="52" value="http://" name="zhuye"> </TD></TR>
+              
+      <TR> 
+        <TD align=middle width="19%">表情图标：</TD>
+                
+        <TD width="81%"><BR>
+          &nbsp; 
+              <INPUT type=radio value=1 
+                  name=icon CHECKED>
+              &nbsp;<IMG height=15 alt=没有表情 
+                  src="image/icon/icon1.gif" width=15 
+                  align=ABSCENTER>&nbsp;&nbsp; 
+              <INPUT type=radio value=2 
+                  name=icon>&nbsp;&nbsp;<IMG height=15 alt=快看！ 
+                  src="image/icon/icon2.gif" width=15 
+                  align=ABSCENTER>&nbsp;&nbsp; <INPUT type=radio value=3 
+                  name=icon>&nbsp;&nbsp;<IMG height=15 alt=嗨嗨，我有主意了！ 
+                  src="image/icon/icon3.gif" width=15 
+                  align=ABSCENTER>&nbsp;&nbsp; <INPUT type=radio value=4 
+                  name=icon>&nbsp;&nbsp;<IMG height=15 alt=警告！ 
+                  src="image/icon/icon4.gif" width=15 
+                  align=ABSCENTER>&nbsp;&nbsp; <INPUT type=radio value=5 
+                  name=icon>&nbsp;&nbsp;<IMG height=15 alt=问题！ 
+                  src="image/icon/icon5.gif" width=15 
+                  align=ABSCENTER>&nbsp;&nbsp; <INPUT type=radio value=6 
+                  name=icon>&nbsp;&nbsp;<IMG height=15 alt=哇！真高兴！ 
+                  src="image/icon/icon6.gif" width=15 
+                  align=ABSCENTER>&nbsp;&nbsp; <INPUT type=radio value=7 
+                  name=icon>&nbsp;&nbsp;<IMG height=15 alt=好难过！ 
+                  src="image/icon/icon7.gif" width=15 
+                  align=ABSCENTER>&nbsp;&nbsp;<BR>&nbsp; <INPUT type=radio 
+                  value=8 name=icon>&nbsp;&nbsp;<IMG height=15 alt=这下惨了！ 
+                  src="image/icon/icon8.gif" width=15 
+                  align=ABSCENTER>&nbsp;&nbsp; <INPUT type=radio value=9 
+                  name=icon>&nbsp;&nbsp;<IMG height=15 alt=含情 
+                  src="image/icon/icon9.gif" width=15 
+                  align=ABSCENTER>&nbsp;&nbsp; <INPUT type=radio value=10 
+                  name=icon>&nbsp;&nbsp;<IMG height=15 alt=嘻嘻！ 
+                  src="image/icon/icon10.gif" width=15 
+                  align=ABSCENTER>&nbsp;&nbsp; <INPUT type=radio value=11 
+                  name=icon>&nbsp;&nbsp;<IMG height=15 alt=呵呵！ 
+                  src="image/icon/icon11.gif" width=15 
+                  align=ABSCENTER>&nbsp;&nbsp; <INPUT type=radio value=12 
+                  name=icon>&nbsp;&nbsp;<IMG height=15 alt=眨眼－－对你有意思哦！ 
+                  src="image/icon/icon12.gif" width=15 
+                  align=ABSCENTER>&nbsp;&nbsp; <INPUT type=radio value=13 
+                  name=icon>&nbsp;&nbsp;<IMG height=15 alt=强烈反对 
+                  src="image/icon/icon13.gif" width=15 
+                  align=ABSCENTER>&nbsp;&nbsp; <INPUT type=radio value=14 
+                  name=icon>&nbsp;&nbsp;<IMG height=15 alt=同意！ 
+                  src="image/icon/icon14.gif" width=15 
+                  align=ABSCENTER>&nbsp;&nbsp; </TD></TR>
+              
+      <TR> 
+        <TD align=middle width="19%">您的留言：</TD>
+                
+        <TD width="81%">
+<TEXTAREA name=liuyanneirong rows=6 cols=51></TEXTAREA>
+          <FONT color=#ff0000><b>*</b></FONT> <br>
+                 <font color="#000000">
+                 按“Enter”回车键换行
+                 </font>
+                </TD></TR></TBODY></TABLE>
+            
+        
+    <table width="75%" border="1" cellspacing="1" cellpadding="0" align="center" height="40" bordercolor="#999999" bordercolorlight="#999999" bordercolordark="#ffffff">
+      <tr> 
+        <td> 
+          <div align="center">
+            <table width="100%" border="0">
+              <tr>
+                <td>
+                  <div align="center"> 
+                    <input class=buttom onClick="return check(this.form,1000)" type=submit value=确定 name=submit>
+                  </div>
+                </td>
+                <td>
+                  <div align="center">
+                    <input class=buttom type=reset value=取消 name=reset>
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div align="center"></div>
+        </td>
+      </tr>
+    </table>
+        
+	<table width="75%" border="0" cellspacing="0" cellpadding="0" align="center" height="30">
+      <tr>
+            
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT color=#ff0000><b>*</b>&nbsp;：表示必填</FONT></td>
+          </tr>
+        </table>
+  </FORM> 
+	</TD>
+
+<!-- #EndEditable -->
+<table width="80%" border="0" align="center">
+  <tr> 
+    <td> 
+      <div align="center"><font size="2">Copyright&copy;2004&nbsp;&nbsp;&nbsp;&nbsp;〖自我介绍网站（临时）〗&nbsp;&nbsp;&nbsp;&nbsp;站长：梁志英</font></div>
+    </td>
+  </tr>
+</table>
+<table width="80%" border="1" cellspacing="1" cellpadding="1" align="center" bordercolor="#999999" bordercolorlight="#999999" bordercolordark="#ffffff">
+  <tr>
+    <td></td>
+  </tr>
+</table>
+<table width="80%" border="0" align="center">
+  <tr> 
+    <td> 
+      <div align="center"><font size="2">建站日期：2005-3-1&nbsp;&nbsp;&nbsp;&nbsp;更新日期：2005-4-23</font></div>
+    </td>
+  </tr>
+</table>
+<!-- #BeginEditable "count" -->
+<!-- #EndEditable -->
+</body>
+<!-- #EndTemplate --></html>
